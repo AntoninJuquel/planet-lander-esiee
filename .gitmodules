@@ -1,0 +1,15 @@
+[submodule "WeaponSystem"]
+	path = Assets/Scripts/WeaponSystem
+	url = https://github.com/AntoninJuquel/WeaponSystem
+[submodule "ReferenceSharing"]
+	path = Assets/Scripts/ReferenceSharing
+	url = https://github.com/AntoninJuquel/ReferenceSharing
+[submodule "ScreenNavigation"]
+	path = Assets/Scripts/ScreenNavigation
+	url = https://github.com/AntoninJuquel/ScreenNavigation
+[submodule "MessagingSystem"]
+	path = Assets/Scripts/MessagingSystem
+	url = https://github.com/AntoninJuquel/MessagingSystem
+[submodule "ChunkSystem"]
+	path = Assets/Scripts/ChunkSystem
+	url = https://github.com/AntoninJuquel/ChunkSystem

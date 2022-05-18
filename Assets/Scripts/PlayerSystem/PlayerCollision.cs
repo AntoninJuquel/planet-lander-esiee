@@ -7,7 +7,7 @@ namespace PlayerSystem
     public class PlayerCollision : MonoBehaviour
     {
         public event EventHandler OnCrash;
-        [SerializeField] private Player data;
+        private Player Data => PlayerManager.Data;
         [SerializeField] private Reference<bool> landedRef;
         private Rigidbody2D _rb;
 
@@ -21,7 +21,7 @@ namespace PlayerSystem
             var angle = Vector2.Angle(transform.up, col.contacts[0].normal);
             var collisionSpeed = col.relativeVelocity.magnitude;
 
-            if (angle < data.maxLandAngle && collisionSpeed < data.maxLandVelocity)
+            if (angle < Data.maxLandAngle && collisionSpeed < Data.maxLandVelocity)
             {
                 Land(col);
             }

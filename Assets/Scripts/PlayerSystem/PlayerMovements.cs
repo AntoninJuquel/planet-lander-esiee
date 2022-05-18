@@ -6,7 +6,7 @@ namespace PlayerSystem
 {
     public class PlayerMovements : MonoBehaviour
     {
-        [SerializeField] private Player data;
+        private Player Data => PlayerManager.Data;
         [SerializeField] private InputAction horizontal, vertical;
         [SerializeField] private Reference<float> horizontalInputRef, verticalInputRef, fuelRef;
 
@@ -46,7 +46,7 @@ namespace PlayerSystem
         {
             if (fuelRef.Value > 0)
             {
-                _rb.AddForce(transform.up * (data.force * verticalInputRef.Value));
+                _rb.AddForce(transform.up * (Data.force * verticalInputRef.Value));
                 _rb.drag = verticalInputRef.Value;
             }
         }
@@ -54,7 +54,7 @@ namespace PlayerSystem
         private void Rotate()
         {
             if (fuelRef.Value > 0)
-                _rb.angularVelocity = -horizontalInputRef.Value * data.torqueSpeed * (verticalInputRef.Value != 0 ? .5f : 1);
+                _rb.angularVelocity = -horizontalInputRef.Value * Data.torqueSpeed * (verticalInputRef.Value != 0 ? .5f : 1);
         }
 
         private void CounterGravity()

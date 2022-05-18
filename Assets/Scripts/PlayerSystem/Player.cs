@@ -5,7 +5,8 @@ namespace PlayerSystem
     [CreateAssetMenu]
     public class Player : ScriptableObject
     {
-        public float maxHealth;
+        public Sprite sprite;
+        public int maxHealth;
         public float force;
         public float torqueSpeed;
         public float maxLandAngle;

@@ -7,19 +7,14 @@ namespace PlayerSystem
 {
     public class PlayerHealth : MonoBehaviour, ITakeHit
     {
-        [SerializeField] private Player data;
-        [SerializeField] private Reference<float> maxHealth, health;
+        private Player Data => PlayerManager.Data;
+        [SerializeField] private Reference<int> maxHealth, health;
 
         public event EventHandler OnDie, OnTakeHit;
 
         private void Awake()
         {
-            maxHealth.Value = health.Value = data.maxHealth;
-        }
-
-        private void Start()
-        {
-            
+            maxHealth.Value = health.Value = Data.maxHealth;
         }
 
         private void Die()

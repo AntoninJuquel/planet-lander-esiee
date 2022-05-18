@@ -8,12 +8,17 @@ namespace PlayerSystem
     {
         [SerializeField] private GameObject playerPrefab;
         [SerializeField] private Reference<int> lives, maxLives;
-
+        [SerializeField] private Player[] data;
         private GameObject _player;
+        public static Player Data;
+
+        private void Awake()
+        {
+            lives.Value = maxLives.Value = data.Length;
+        }
 
         private void Start()
         {
-            lives.Value = maxLives.Value;
             SpawnPlayer();
         }
 
@@ -31,6 +36,7 @@ namespace PlayerSystem
 
         private void SpawnPlayer()
         {
+            Data = data[maxLives.Value - lives.Value];
             var newPlayer = Instantiate(playerPrefab, Vector3.zero, Quaternion.identity);
             _player = newPlayer;
             Subscribe();
@@ -50,6 +56,7 @@ namespace PlayerSystem
         {
             Unsubscribe();
             lives.Value--;
+            Destroy(_player);
             if (lives <= 0)
             {
                 //GameOver

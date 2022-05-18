@@ -86,7 +86,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e8e01ecbccb66f644a565563af1a911d, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -94,7 +94,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &3190908331673986284
@@ -156,7 +156,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 159117f976cf476d9453bd217d7fcd20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 434d4c365256abc4699c8240f25999f1, type: 2}
   horizontal:
     m_Name: Horizontal
     m_Type: 0
@@ -295,7 +294,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 540a4effae8c4e8099b90c1a871f1d75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 434d4c365256abc4699c8240f25999f1, type: 2}
   landedRef:
     useConstant: 0
     constantValue: 0
@@ -312,7 +310,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6390607570740aab98dd9cfd68443fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 434d4c365256abc4699c8240f25999f1, type: 2}
   verticalInputRef:
     useConstant: 0
     constantValue: 0
@@ -337,7 +334,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fd41cd392a2bc54bafcba2ce86c928d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 434d4c365256abc4699c8240f25999f1, type: 2}
   verticalInputRef:
     useConstant: 0
     constantValue: 0
@@ -452,11 +448,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fb3edfab4f743faacf4700dc35dcad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 434d4c365256abc4699c8240f25999f1, type: 2}
   maxHealth:
     useConstant: 0
     constantValue: 0
-    Variable: {fileID: 11400000, guid: eb1665bf926a0894e9947b2631b0ac75, type: 2}
+    Variable: {fileID: 11400000, guid: 34ad5789b0d11de47a54e705d8b8b506, type: 2}
   health:
     useConstant: 0
     constantValue: 0

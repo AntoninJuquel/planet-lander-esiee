@@ -1,18 +1,19 @@
 ﻿using System.Collections.Generic;
+using ChunkSystem;
 using ReferenceSharing;
 using UnityEngine;
 
 namespace WorldGeneration
 {
-    public class World : MonoBehaviour
+    public class WorldManager : MonoBehaviour, IChunkHandler
     {
         [SerializeField] private Reference<int> levelRef;
         [SerializeField] private WorldPart worldPartPrefab;
-        [SerializeField] private WorldPreset[] worldPresets;
+        [SerializeField] private World[] worldPresets;
         private readonly Dictionary<Vector2, WorldPart> _worldParts = new Dictionary<Vector2, WorldPart>();
         private int PresetIndex => levelRef.Value % worldPresets.Length;
 
-        public void OnChunkCreated(Bounds e)
+        public void ChunkCreatedHandler(Bounds e)
         {
             if (e.center.y != 0) return;
             var start = e.center.x - e.size.x * .5f;
@@ -20,13 +21,13 @@ namespace WorldGeneration
             GenerateWorldPart(start, end, e.center.x);
         }
 
-        public void OnChunkEnabled(Bounds e)
+        public void ChunkEnabledHandler(Bounds e)
         {
             if (e.center.y != 0) return;
             _worldParts[e.center].gameObject.SetActive(true);
         }
 
-        public void OnChunkDisabled(Bounds e)
+        public void ChunkDisabledHandler(Bounds e)
         {
             if (e.center.y != 0) return;
             _worldParts[e.center].gameObject.SetActive(false);

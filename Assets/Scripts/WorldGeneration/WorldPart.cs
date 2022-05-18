@@ -22,22 +22,22 @@ namespace WorldGeneration
             _lr = GetComponent<LineRenderer>();
         }
 
-        public void Generate(WorldPreset worldPreset)
+        public void Generate(World world)
         {
-            Generate(worldPreset, _lr.GetPosition(0).x, _lr.GetPosition(_lr.positionCount - 1).x);
+            Generate(world, _lr.GetPosition(0).x, _lr.GetPosition(_lr.positionCount - 1).x);
         }
 
-        public void Generate(WorldPreset worldPreset, float startX, float endX)
+        public void Generate(World world, float startX, float endX)
         {
             var points = new List<Vector2>();
             points.Add(new Vector2(startX, 0));
 
-            for (var x = startX + Random.Range(worldPreset.step.x, worldPreset.step.y); x < endX; x += Random.Range(worldPreset.step.x, worldPreset.step.y))
+            for (var x = startX + Random.Range(world.step.x, world.step.y); x < endX; x += Random.Range(world.step.x, world.step.y))
             {
-                var y = Random.Range(worldPreset.height.x, worldPreset.height.y);
+                var y = Random.Range(world.height.x, world.height.y);
                 points.Add(new Vector2(x, y));
 
-                foreach (var worldDeformation in worldPreset.worldDeformations)
+                foreach (var worldDeformation in world.worldDeformations)
                 {
                     if (Random.value <= worldDeformation.chance)
                         AddDeformation(ref x, y, points, worldDeformation, endX);

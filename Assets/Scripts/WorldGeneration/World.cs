@@ -3,7 +3,7 @@
 namespace WorldGeneration
 {
     [CreateAssetMenu(fileName = "New world preset", menuName = "World", order = 0)]
-    public class WorldPreset : ScriptableObject
+    public class World : ScriptableObject
     {
         public float gravity;
         public Vector2 step, height;

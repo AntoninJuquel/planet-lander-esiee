@@ -37,7 +37,7 @@ namespace PlayerSystem
         private void SpawnPlayer()
         {
             Data = data[maxLives.Value - lives.Value];
-            var newPlayer = Instantiate(playerPrefab, Vector3.zero, Quaternion.identity);
+            var newPlayer = Instantiate(playerPrefab, Vector3.up * 50f, Quaternion.identity);
             _player = newPlayer;
             Subscribe();
         }

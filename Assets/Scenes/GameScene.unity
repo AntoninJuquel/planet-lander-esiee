@@ -524,49 +524,13 @@ MonoBehaviour:
   chunkSize: {x: 50, y: 50}
   onChunkCreated:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1248981861}
-        m_TargetAssemblyTypeName: WorldGeneration.World, Assembly-CSharp
-        m_MethodName: OnChunkCreated
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onChunkEnabled:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1248981861}
-        m_TargetAssemblyTypeName: WorldGeneration.World, Assembly-CSharp
-        m_MethodName: OnChunkEnabled
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onChunkDisabled:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1248981861}
-        m_TargetAssemblyTypeName: WorldGeneration.World, Assembly-CSharp
-        m_MethodName: OnChunkDisabled
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1248981861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -586,6 +550,92 @@ MonoBehaviour:
   worldPartPrefab: {fileID: 4598284120464089684, guid: 0e8c9b16351803f41a8de15792fb0baa, type: 3}
   worldPresets:
   - {fileID: 11400000, guid: 18019a1b1fb79d74fb66c4625295f0bc, type: 2}
+--- !u!1 &1262408169
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1262408170}
+  - component: {fileID: 1262408172}
+  - component: {fileID: 1262408171}
+  m_Layer: 0
+  m_Name: EnemyManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1262408170
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262408169}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1262408171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262408169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e8f64158666e584c8fa5bbb959b47b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  killsRef:
+    useConstant: 0
+    constantValue: 0
+    Variable: {fileID: 11400000, guid: 0c5081508b66e164da3e6c8adda8397d, type: 2}
+  waveNumberRef:
+    useConstant: 0
+    constantValue: 0
+    Variable: {fileID: 11400000, guid: c78c37e5e4d096e48ac776a167ff3706, type: 2}
+  levelRef:
+    useConstant: 0
+    constantValue: 0
+    Variable: {fileID: 11400000, guid: fe38d69f410c15e468d6e954e650ec7b, type: 2}
+  wavesFinishedRef:
+    useConstant: 0
+    constantValue: 0
+    Variable: {fileID: 11400000, guid: a25a976f93e076a4fa49f05a870eea34, type: 2}
+--- !u!114 &1262408172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262408169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6a83e08661d75a4ca8e83e0c642a107, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waves: []
+  onNewWave:
+    m_PersistentCalls:
+      m_Calls: []
+  onWaveCleared:
+    m_PersistentCalls:
+      m_Calls: []
+  onWaveFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  onWaveSpawn:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1810737680
 GameObject:
   m_ObjectHideFlags: 0

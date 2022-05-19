@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using ReferenceSharing;
 using UnityEngine;
@@ -6,12 +7,14 @@ using WaveSystem;
 
 namespace EnemySystem
 {
-    public class EnemyManager : MonoBehaviour, IWaveHandler
+    public class EnemyManager : MonoBehaviour, IHandleWave
     {
         [SerializeField] private Reference<int> killsRef, waveNumberRef, levelRef;
         [SerializeField] private Reference<bool> wavesFinishedRef;
 
-        private Dictionary<Transform, Enemy> _enemies = new();
+        public event EventHandler<int> OnStartEncounter;
+
+        private Dictionary<Transform, GameObject> _enemies = new();
         private Transform _player;
         private Camera _mainCamera;
 
@@ -20,10 +23,9 @@ namespace EnemySystem
             _mainCamera = Camera.main;
         }
 
-        private void SpawnEnemy(Enemy enemy, Vector3 position)
+        private void SpawnEnemy(GameObject enemy, Vector3 position)
         {
-            var newEnemy = Instantiate(enemy, position, Quaternion.identity).GetComponent<Enemy>();
-            newEnemy.SetTarget(_player);
+            var newEnemy = Instantiate(enemy, position, Quaternion.identity);
             _enemies.Add(newEnemy.transform, newEnemy);
         }
 
@@ -44,7 +46,7 @@ namespace EnemySystem
                 DestroyEnemy(enemies[i], false);
             }
 
-            _enemies = new Dictionary<Transform, Enemy>();
+            _enemies = new Dictionary<Transform, GameObject>();
         }
 
         public void OnNewWave()
@@ -58,7 +60,7 @@ namespace EnemySystem
 
         public void OnWaveSpawn(GameObject toSpawn)
         {
-            SpawnEnemy(toSpawn.GetComponent<Enemy>(), Vector3.zero);
+            SpawnEnemy(toSpawn, Vector3.zero);
         }
 
         public void OnWaveFinished()

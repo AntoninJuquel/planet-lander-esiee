@@ -647,7 +647,7 @@ GameObject:
   - component: {fileID: 1810737681}
   - component: {fileID: 1810737682}
   m_Layer: 0
-  m_Name: PlayerManager
+  m_Name: SpaceshipManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -680,7 +680,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf63506eb300426bad5b4cd860653632, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 3190908331673986287, guid: 57f679e0d33cca440a64005dbee3e3ce, type: 3}
+  spaceshipPrefab: {fileID: 3190908331673986287, guid: 57f679e0d33cca440a64005dbee3e3ce, type: 3}
   lives:
     useConstant: 0
     constantValue: 0
@@ -690,6 +690,4 @@ MonoBehaviour:
     constantValue: 0
     Variable: {fileID: 11400000, guid: c56877effe2614d47892e9cac4e967f2, type: 2}
   data:
-  - {fileID: 11400000, guid: 434d4c365256abc4699c8240f25999f1, type: 2}
-  - {fileID: 11400000, guid: 434d4c365256abc4699c8240f25999f1, type: 2}
   - {fileID: 11400000, guid: 434d4c365256abc4699c8240f25999f1, type: 2}

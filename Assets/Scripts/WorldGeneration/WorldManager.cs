@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace WorldGeneration
 {
-    public class WorldManager : MonoBehaviour, IChunkHandler
+    public class WorldManager : MonoBehaviour, IHandleChunk
     {
         [SerializeField] private Reference<int> levelRef;
         [SerializeField] private WorldPart worldPartPrefab;

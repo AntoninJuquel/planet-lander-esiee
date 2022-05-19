@@ -1,12 +1,11 @@
-using System;
 using ReferenceSharing;
 using UnityEngine;
 
-namespace PlayerSystem
+namespace SpaceshipSystem
 {
-    public class PlayerGFX : MonoBehaviour
+    public class SpaceshipGFX : MonoBehaviour
     {
-        private Player Data => PlayerManager.Data;
+        private Spaceship Data => SpaceshipManager.Data;
         [SerializeField] private Reference<float> verticalInputRef, fuelRef;
         private ParticleSystem.EmissionModule _emission;
         private SpriteRenderer _sr;

@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 
-namespace PlayerSystem
+namespace SpaceshipSystem
 {
     [CreateAssetMenu]
-    public class Player : ScriptableObject
+    public class Spaceship : ScriptableObject
     {
         public Sprite sprite;
         public int maxHealth;

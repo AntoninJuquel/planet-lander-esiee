@@ -3,13 +3,13 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using WeaponSystem;
 
-namespace PlayerSystem
+namespace SpaceshipSystem
 {
-    public class PlayerAttack : MonoBehaviour, IWeaponUser
+    public class SpaceshipAttack : MonoBehaviour, IHandleWeapon
     {
         [SerializeField] private InputAction selectWeapon, shoot;
         public bool PullTrigger { get; private set; }
-        public event EventHandler<int> onSwitchWeapon;
+        public event EventHandler<int> OnSwitchWeapon;
 
         private void OnEnable()
         {
@@ -35,7 +35,7 @@ namespace PlayerSystem
 
         private void OnSelectWeaponPerformed(InputAction.CallbackContext c)
         {
-            onSwitchWeapon?.Invoke(this, (int) c.ReadValue<float>());
+            OnSwitchWeapon?.Invoke(this, (int) c.ReadValue<float>());
         }
     }
 }

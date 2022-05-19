@@ -1,11 +1,11 @@
 ﻿using ReferenceSharing;
 using UnityEngine;
 
-namespace PlayerSystem
+namespace SpaceshipSystem
 {
-    public class PlayerFuel : MonoBehaviour
+    public class SpaceshipFuel : MonoBehaviour
     {
-        private Player Data => PlayerManager.Data;
+        private Spaceship Data => SpaceshipManager.Data;
         [SerializeField] private Reference<float> verticalInputRef, fuelRef, maxFuelRef;
 
         private void Awake()

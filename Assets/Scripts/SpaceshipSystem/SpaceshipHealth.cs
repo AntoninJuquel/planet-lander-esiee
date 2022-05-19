@@ -3,11 +3,11 @@ using ReferenceSharing;
 using UnityEngine;
 using WeaponSystem;
 
-namespace PlayerSystem
+namespace SpaceshipSystem
 {
-    public class PlayerHealth : MonoBehaviour, ITakeHit
+    public class SpaceshipHealth : MonoBehaviour, ITakeHit
     {
-        private Player Data => PlayerManager.Data;
+        private Spaceship Data => SpaceshipManager.Data;
         [SerializeField] private Reference<int> maxHealth, health;
 
         public event EventHandler OnDie, OnTakeHit;

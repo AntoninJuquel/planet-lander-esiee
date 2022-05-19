@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace PlayerSystem
+namespace SpaceshipSystem
 {
-    public class PlayerMovements : MonoBehaviour
+    public class SpaceshipMovements : MonoBehaviour
     {
-        private Player Data => PlayerManager.Data;
+        private Spaceship Data => SpaceshipManager.Data;
         [SerializeField] private InputAction horizontal, vertical;
         [SerializeField] private Reference<float> horizontalInputRef, verticalInputRef, fuelRef;
 

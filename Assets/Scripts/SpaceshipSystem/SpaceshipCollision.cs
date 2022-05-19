@@ -2,12 +2,12 @@
 using ReferenceSharing;
 using UnityEngine;
 
-namespace PlayerSystem
+namespace SpaceshipSystem
 {
-    public class PlayerCollision : MonoBehaviour
+    public class SpaceshipCollision : MonoBehaviour
     {
         public event EventHandler OnCrash;
-        private Player Data => PlayerManager.Data;
+        private Spaceship Data => SpaceshipManager.Data;
         [SerializeField] private Reference<bool> landedRef;
         private Rigidbody2D _rb;
 

@@ -2,15 +2,15 @@
 using ReferenceSharing;
 using UnityEngine;
 
-namespace PlayerSystem
+namespace SpaceshipSystem
 {
-    public class PlayerManager : MonoBehaviour
+    public class SpaceshipManager : MonoBehaviour
     {
         [SerializeField] private GameObject playerPrefab;
         [SerializeField] private Reference<int> lives, maxLives;
-        [SerializeField] private Player[] data;
+        [SerializeField] private Spaceship[] data;
         private GameObject _player;
-        public static Player Data;
+        public static Spaceship Data;
 
         private void Awake()
         {
@@ -24,14 +24,14 @@ namespace PlayerSystem
 
         private void Subscribe()
         {
-            _player.GetComponent<PlayerCollision>().OnCrash += OnCrash;
-            _player.GetComponent<PlayerHealth>().OnDie += OnDie;
+            _player.GetComponent<SpaceshipCollision>().OnCrash += OnCrash;
+            _player.GetComponent<SpaceshipHealth>().OnDie += OnDie;
         }
 
         private void Unsubscribe()
         {
-            _player.GetComponent<PlayerCollision>().OnCrash -= OnCrash;
-            _player.GetComponent<PlayerHealth>().OnDie -= OnDie;
+            _player.GetComponent<SpaceshipCollision>().OnCrash -= OnCrash;
+            _player.GetComponent<SpaceshipHealth>().OnDie -= OnDie;
         }
 
         private void SpawnPlayer()

@@ -1,12 +1,15 @@
+using System;
 using UnityEngine;
 
 namespace WaveSystem
 {
-    public interface IWaveHandler
+    public interface IHandleWave
     {
         void OnNewWave();
         void OnWaveCleared();
         void OnWaveSpawn(GameObject toSpawn);
         void OnWaveFinished();
+
+        event EventHandler<int> OnStartEncounter;
     }
 }

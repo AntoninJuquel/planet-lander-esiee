@@ -1,15 +1,17 @@
 ﻿using System;
 using ReferenceSharing;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace SpaceshipSystem
 {
     public class SpaceshipManager : MonoBehaviour
     {
-        [SerializeField] private GameObject playerPrefab;
+        [SerializeField] private GameObject spaceshipPrefab;
+
         [SerializeField] private Reference<int> lives, maxLives;
         [SerializeField] private Spaceship[] data;
-        private GameObject _player;
+        private GameObject _spaceship;
         public static Spaceship Data;
 
         private void Awake()
@@ -24,21 +26,21 @@ namespace SpaceshipSystem
 
         private void Subscribe()
         {
-            _player.GetComponent<SpaceshipCollision>().OnCrash += OnCrash;
-            _player.GetComponent<SpaceshipHealth>().OnDie += OnDie;
+            _spaceship.GetComponent<SpaceshipCollision>().OnCrash += OnCrash;
+            _spaceship.GetComponent<SpaceshipHealth>().OnDie += OnDie;
         }
 
         private void Unsubscribe()
         {
-            _player.GetComponent<SpaceshipCollision>().OnCrash -= OnCrash;
-            _player.GetComponent<SpaceshipHealth>().OnDie -= OnDie;
+            _spaceship.GetComponent<SpaceshipCollision>().OnCrash -= OnCrash;
+            _spaceship.GetComponent<SpaceshipHealth>().OnDie -= OnDie;
         }
 
         private void SpawnPlayer()
         {
             Data = data[maxLives.Value - lives.Value];
-            var newPlayer = Instantiate(playerPrefab, Vector3.up * 50f, Quaternion.identity);
-            _player = newPlayer;
+            var newPlayer = Instantiate(spaceshipPrefab, Vector3.up * 50f, Quaternion.identity);
+            _spaceship = newPlayer;
             Subscribe();
         }
 
@@ -56,7 +58,7 @@ namespace SpaceshipSystem
         {
             Unsubscribe();
             lives.Value--;
-            Destroy(_player);
+            Destroy(_spaceship);
             if (lives <= 0)
             {
                 //GameOver

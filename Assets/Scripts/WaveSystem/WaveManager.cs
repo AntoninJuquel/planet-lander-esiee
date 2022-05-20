@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
 namespace WaveSystem
 {
@@ -29,7 +31,8 @@ namespace WaveSystem
                 onWaveSpawn.AddListener(waveHandler.OnWaveSpawn);
                 onWaveFinished.AddListener(waveHandler.OnWaveFinished);
 
-                waveHandler.OnStartEncounter += StartEncounter;
+                waveHandler.OnStartWave += StartWave;
+                waveHandler.OnStopWave += StopWave;
             }
         }
 
@@ -42,7 +45,8 @@ namespace WaveSystem
                 onWaveSpawn.RemoveListener(waveHandler.OnWaveSpawn);
                 onWaveFinished.RemoveListener(waveHandler.OnWaveFinished);
 
-                waveHandler.OnStartEncounter -= StartEncounter;
+                waveHandler.OnStartWave -= StartWave;
+                waveHandler.OnStopWave -= StopWave;
             }
         }
 
@@ -77,19 +81,17 @@ namespace WaveSystem
             onWaveFinished?.Invoke();
         }
 
-        public void StartEncounter(object sender, int index) => StartEncounter(waves[index % waves.Length]);
-
-        public void StartEncounter(Wave wave)
+        private void StartWave(object sender, int index)
         {
             if (_encounter != null)
             {
                 return;
             }
 
-            _encounter = StartCoroutine(SpawnWaves(wave));
+            _encounter = StartCoroutine(SpawnWaves(waves[index % waves.Length]));
         }
 
-        public void StopEncounter()
+        private void StopWave(object sender, EventArgs args)
         {
             if (_encounter == null)
             {

@@ -22,11 +22,6 @@ namespace WorldGeneration
             _lr = GetComponent<LineRenderer>();
         }
 
-        public void Generate(World world)
-        {
-            Generate(world, _lr.GetPosition(0).x, _lr.GetPosition(_lr.positionCount - 1).x);
-        }
-
         public void Generate(World world, float startX, float endX)
         {
             var points = new List<Vector2>();

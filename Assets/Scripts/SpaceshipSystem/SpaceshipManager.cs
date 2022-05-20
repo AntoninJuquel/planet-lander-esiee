@@ -1,7 +1,7 @@
 ﻿using System;
 using ReferenceSharing;
 using UnityEngine;
-using UnityEngine.Serialization;
+using UnityEngine.Events;
 
 namespace SpaceshipSystem
 {
@@ -9,20 +9,15 @@ namespace SpaceshipSystem
     {
         [SerializeField] private GameObject spaceshipPrefab;
 
-        [SerializeField] private Reference<int> lives, maxLives;
+        [SerializeField] private Reference<int> livesRef, maxLivesRef;
+        [SerializeField] private Reference<float> fuelRef, maxFuelRef;
         [SerializeField] private Spaceship[] data;
+        [SerializeField] private float maxFuel;
+
+        [SerializeField] private UnityEvent<GameObject> onSpaceshipSpawn;
+        [SerializeField] private UnityEvent onLivesEmpty;
         private GameObject _spaceship;
         public static Spaceship Data;
-
-        private void Awake()
-        {
-            lives.Value = maxLives.Value = data.Length;
-        }
-
-        private void Start()
-        {
-            SpawnPlayer();
-        }
 
         private void Subscribe()
         {
@@ -36,36 +31,56 @@ namespace SpaceshipSystem
             _spaceship.GetComponent<SpaceshipHealth>().OnDie -= OnDie;
         }
 
-        private void SpawnPlayer()
+        private void SpawnSpaceship()
         {
-            Data = data[maxLives.Value - lives.Value];
+            Data = data[maxLivesRef.Value - livesRef.Value];
             var newPlayer = Instantiate(spaceshipPrefab, Vector3.up * 50f, Quaternion.identity);
             _spaceship = newPlayer;
+            onSpaceshipSpawn?.Invoke(_spaceship);
             Subscribe();
         }
 
         private void OnCrash(object sender, EventArgs args)
         {
-            DestroyPlayer();
+            DestroySpaceship();
+            CheckRespawn();
         }
 
         private void OnDie(object sender, EventArgs args)
         {
-            DestroyPlayer();
+            DestroySpaceship();
+            CheckRespawn();
         }
 
-        private void DestroyPlayer()
+        private void DestroySpaceship()
         {
             Unsubscribe();
-            lives.Value--;
             Destroy(_spaceship);
-            if (lives <= 0)
+        }
+
+        private void CheckRespawn()
+        {
+            livesRef.Value--;
+            if (livesRef.Value <= 0)
             {
-                //GameOver
+                onLivesEmpty?.Invoke();
                 return;
             }
 
-            SpawnPlayer();
+            SpawnSpaceship();
+        }
+
+        public void StartSpaceshipManager()
+        {
+            livesRef.Value = maxLivesRef.Value = data.Length;
+            fuelRef.Value = maxFuelRef.Value = maxFuel;
+            SpawnSpaceship();
+        }
+
+        public void StopSpaceshipManager()
+        {
+            if (_spaceship)
+                DestroySpaceship();
         }
     }
 }

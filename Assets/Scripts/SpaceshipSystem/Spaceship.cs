@@ -11,7 +11,6 @@ namespace SpaceshipSystem
         public float torqueSpeed;
         public float maxLandAngle;
         public float maxLandVelocity;
-        public float maxFuel;
         public float fuelBurnRate;
         public float minParticleRate;
         public float maxParticleRate;

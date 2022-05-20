@@ -10,6 +10,7 @@ namespace WaveSystem
         void OnWaveSpawn(GameObject toSpawn);
         void OnWaveFinished();
 
-        event EventHandler<int> OnStartEncounter;
+        event EventHandler<int> OnStartWave;
+        event EventHandler OnStopWave;
     }
 }

@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 3190908331673986286}
   - component: {fileID: 3190908331673986284}
   - component: {fileID: 3190908331673986275}
+  - component: {fileID: 3190908331673986276}
   - component: {fileID: 3190908331673986273}
   - component: {fileID: 3190908331673986272}
   - component: {fileID: 3190908331673986279}
@@ -64,9 +65,8 @@ GameObject:
   - component: {fileID: 3190908331673986298}
   - component: {fileID: 1108188599628950117}
   - component: {fileID: 7976945511815386270}
-  - component: {fileID: 3190908331673986276}
-  - component: {fileID: 3190908331673986277}
   - component: {fileID: 7894146003019771742}
+  - component: {fileID: 3190908331673986277}
   m_Layer: 0
   m_Name: Spaceship
   m_TagString: Player
@@ -191,345 +191,6 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &3190908331673986273
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3190908331673986287}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 159117f976cf476d9453bd217d7fcd20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  horizontal:
-    m_Name: Horizontal
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 49c908d3-3301-404c-b681-75b1240365e5
-    m_Processors: StickDeadzone
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: Keyboard
-      m_Id: 62380fb8-7228-45c6-a895-3e0b3b67727a
-      m_Path: 1DAxis
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Horizontal
-      m_Flags: 4
-    - m_Name: negative
-      m_Id: d4ffa6c9-a1f8-41fd-a1b6-eae28d5310f6
-      m_Path: <Keyboard>/leftArrow
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Horizontal
-      m_Flags: 8
-    - m_Name: positive
-      m_Id: 26ada57e-ddbd-474b-8d6b-bf39911e8290
-      m_Path: <Keyboard>/rightArrow
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Horizontal
-      m_Flags: 8
-    - m_Name: Gamepad
-      m_Id: 1450f2ad-002e-491e-be56-58d86f6800c1
-      m_Path: 1DAxis
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Horizontal
-      m_Flags: 4
-    - m_Name: negative
-      m_Id: 75f17833-8282-404e-be6b-e0629bfb02cd
-      m_Path: <Gamepad>/leftStick/left
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Horizontal
-      m_Flags: 8
-    - m_Name: positive
-      m_Id: b66997f2-d852-4ed8-8e9d-e7f7a85a4955
-      m_Path: <Gamepad>/leftStick/right
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Horizontal
-      m_Flags: 8
-    m_Flags: 0
-  vertical:
-    m_Name: Vertical
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: ccdb7e39-bfca-40e4-bcf0-5c397efedbb9
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: Keyboard
-      m_Id: 9187e160-a6a7-443e-9578-6a52b8bd483b
-      m_Path: 1DAxis
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Vertical
-      m_Flags: 4
-    - m_Name: negative
-      m_Id: 4879dcce-aa50-4971-b531-06e9c4c61eb3
-      m_Path: <Keyboard>/downArrow
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Vertical
-      m_Flags: 8
-    - m_Name: positive
-      m_Id: 70442d80-c798-49ef-be7e-923cae94ebeb
-      m_Path: <Keyboard>/upArrow
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Vertical
-      m_Flags: 8
-    - m_Name: Gamepad
-      m_Id: 1f87f7e4-1d8d-4eb2-9563-1c83e5a5c4fc
-      m_Path: 1DAxis
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Vertical
-      m_Flags: 4
-    - m_Name: negative
-      m_Id: 9b2c8d04-c541-45eb-b964-8e3697bc4177
-      m_Path: <Gamepad>/leftTrigger
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Vertical
-      m_Flags: 8
-    - m_Name: positive
-      m_Id: 6c8a1dc2-a8fb-4d22-bd0b-53d5955df828
-      m_Path: <Gamepad>/rightTrigger
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Vertical
-      m_Flags: 8
-    m_Flags: 0
-  horizontalInputRef:
-    useConstant: 0
-    constantValue: 0
-    Variable: {fileID: 11400000, guid: fc4f0a484f298454f9ecbba04af0731a, type: 2}
-  verticalInputRef:
-    useConstant: 0
-    constantValue: 0
-    Variable: {fileID: 11400000, guid: e9ab9fe4c215a0441a0fab95f8fa93fe, type: 2}
-  fuelRef:
-    useConstant: 0
-    constantValue: 0
-    Variable: {fileID: 11400000, guid: b64aadf9cb0eb57419e21567199dd2bc, type: 2}
---- !u!114 &3190908331673986272
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3190908331673986287}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 540a4effae8c4e8099b90c1a871f1d75, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  landedRef:
-    useConstant: 0
-    constantValue: 0
-    Variable: {fileID: 11400000, guid: 09217a635c05c554688d6bece47f01e8, type: 2}
---- !u!114 &3190908331673986279
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3190908331673986287}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6390607570740aab98dd9cfd68443fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  verticalInputRef:
-    useConstant: 0
-    constantValue: 0
-    Variable: {fileID: 11400000, guid: e9ab9fe4c215a0441a0fab95f8fa93fe, type: 2}
-  fuelRef:
-    useConstant: 0
-    constantValue: 0
-    Variable: {fileID: 11400000, guid: b64aadf9cb0eb57419e21567199dd2bc, type: 2}
-  maxFuelRef:
-    useConstant: 0
-    constantValue: 0
-    Variable: {fileID: 11400000, guid: 1d075520dd131d349898e093247a8bf3, type: 2}
---- !u!114 &3190908331673986278
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3190908331673986287}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fd41cd392a2bc54bafcba2ce86c928d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  verticalInputRef:
-    useConstant: 0
-    constantValue: 0
-    Variable: {fileID: 11400000, guid: e9ab9fe4c215a0441a0fab95f8fa93fe, type: 2}
-  fuelRef:
-    useConstant: 0
-    constantValue: 0
-    Variable: {fileID: 11400000, guid: b64aadf9cb0eb57419e21567199dd2bc, type: 2}
---- !u!114 &3190908331673986299
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3190908331673986287}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cafdf242b94340c2a372bb424078b725, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selectWeapon:
-    m_Name: Select Weapon
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 12757218-3c12-4937-b38e-92e05779c4b7
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: Keyboard
-      m_Id: 498e7c4d-6cfd-40fe-8cc0-95420ab513ba
-      m_Path: 1DAxis
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Select Weapon
-      m_Flags: 4
-    - m_Name: negative
-      m_Id: f75d541f-82e2-4268-ac94-61e9c5d32d7f
-      m_Path: <Keyboard>/q
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Select Weapon
-      m_Flags: 8
-    - m_Name: positive
-      m_Id: a25667f9-7ef5-4cb6-9a79-6f21570021e8
-      m_Path: <Keyboard>/e
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Select Weapon
-      m_Flags: 8
-    - m_Name: Gamepad
-      m_Id: 8d367a8a-b18b-4e14-ad92-d47b7a51578a
-      m_Path: 1DAxis
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Select Weapon
-      m_Flags: 4
-    - m_Name: negative
-      m_Id: b9bb2eb6-5b7e-4816-9f17-ad737644843a
-      m_Path: <Gamepad>/leftShoulder
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Select Weapon
-      m_Flags: 8
-    - m_Name: positive
-      m_Id: d4a8beec-e3c6-48db-a966-cc964a2c34f8
-      m_Path: <Gamepad>/rightShoulder
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Select Weapon
-      m_Flags: 8
-    m_Flags: 0
-  shoot:
-    m_Name: Trigger
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 508c2424-d007-465e-b533-7f0327f6adbb
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 8a56898b-82bc-46f7-a854-8c6cf75e10a6
-      m_Path: <Keyboard>/space
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Trigger
-      m_Flags: 0
-    - m_Name: 
-      m_Id: 0969f154-7bf3-4e0f-a6da-1edf50db7fac
-      m_Path: <Gamepad>/buttonSouth
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Trigger
-      m_Flags: 0
-    m_Flags: 0
---- !u!114 &3190908331673986298
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3190908331673986287}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fb3edfab4f743faacf4700dc35dcad8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth:
-    useConstant: 0
-    constantValue: 0
-    Variable: {fileID: 11400000, guid: 34ad5789b0d11de47a54e705d8b8b506, type: 2}
-  health:
-    useConstant: 0
-    constantValue: 0
-    Variable: {fileID: 11400000, guid: a266e67383076f940888621ce44ff83b, type: 2}
---- !u!114 &1108188599628950117
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3190908331673986287}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6f15f70db0f46b19ccbb76fece55e4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7976945511815386270
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3190908331673986287}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d159f1c6e8964f0aa4179639b76659a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onLoot:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!198 &3190908331673986276
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -5237,6 +4898,364 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &3190908331673986273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3190908331673986287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159117f976cf476d9453bd217d7fcd20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horizontal:
+    m_Name: Horizontal
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 49c908d3-3301-404c-b681-75b1240365e5
+    m_Processors: StickDeadzone
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: Keyboard
+      m_Id: 62380fb8-7228-45c6-a895-3e0b3b67727a
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Horizontal
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: d4ffa6c9-a1f8-41fd-a1b6-eae28d5310f6
+      m_Path: <Keyboard>/leftArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Horizontal
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: 26ada57e-ddbd-474b-8d6b-bf39911e8290
+      m_Path: <Keyboard>/rightArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Horizontal
+      m_Flags: 8
+    - m_Name: Gamepad
+      m_Id: 1450f2ad-002e-491e-be56-58d86f6800c1
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Horizontal
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: 75f17833-8282-404e-be6b-e0629bfb02cd
+      m_Path: <Gamepad>/leftStick/left
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Horizontal
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: b66997f2-d852-4ed8-8e9d-e7f7a85a4955
+      m_Path: <Gamepad>/leftStick/right
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Horizontal
+      m_Flags: 8
+    m_Flags: 0
+  vertical:
+    m_Name: Vertical
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: ccdb7e39-bfca-40e4-bcf0-5c397efedbb9
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: Keyboard
+      m_Id: 9187e160-a6a7-443e-9578-6a52b8bd483b
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Vertical
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: 4879dcce-aa50-4971-b531-06e9c4c61eb3
+      m_Path: <Keyboard>/downArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Vertical
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: 70442d80-c798-49ef-be7e-923cae94ebeb
+      m_Path: <Keyboard>/upArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Vertical
+      m_Flags: 8
+    - m_Name: Gamepad
+      m_Id: 1f87f7e4-1d8d-4eb2-9563-1c83e5a5c4fc
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Vertical
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: 9b2c8d04-c541-45eb-b964-8e3697bc4177
+      m_Path: <Gamepad>/leftTrigger
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Vertical
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: 6c8a1dc2-a8fb-4d22-bd0b-53d5955df828
+      m_Path: <Gamepad>/rightTrigger
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Vertical
+      m_Flags: 8
+    m_Flags: 0
+  horizontalInputRef:
+    useConstant: 0
+    constantValue: 0
+    Variable: {fileID: 11400000, guid: fc4f0a484f298454f9ecbba04af0731a, type: 2}
+  verticalInputRef:
+    useConstant: 0
+    constantValue: 0
+    Variable: {fileID: 11400000, guid: e9ab9fe4c215a0441a0fab95f8fa93fe, type: 2}
+  fuelRef:
+    useConstant: 0
+    constantValue: 0
+    Variable: {fileID: 11400000, guid: b64aadf9cb0eb57419e21567199dd2bc, type: 2}
+  altitudeRef:
+    useConstant: 0
+    constantValue: 0
+    Variable: {fileID: 11400000, guid: 77e7f78d65080d7419f5d4acf0ec49eb, type: 2}
+  speedRef:
+    useConstant: 0
+    constantValue: 0
+    Variable: {fileID: 11400000, guid: 6a412c8c07030ab4bbf479aca4252314, type: 2}
+--- !u!114 &3190908331673986272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3190908331673986287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 540a4effae8c4e8099b90c1a871f1d75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  landedRef:
+    useConstant: 0
+    constantValue: 0
+    Variable: {fileID: 11400000, guid: 09217a635c05c554688d6bece47f01e8, type: 2}
+--- !u!114 &3190908331673986279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3190908331673986287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6390607570740aab98dd9cfd68443fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  verticalInputRef:
+    useConstant: 0
+    constantValue: 0
+    Variable: {fileID: 11400000, guid: e9ab9fe4c215a0441a0fab95f8fa93fe, type: 2}
+  fuelRef:
+    useConstant: 0
+    constantValue: 0
+    Variable: {fileID: 11400000, guid: b64aadf9cb0eb57419e21567199dd2bc, type: 2}
+--- !u!114 &3190908331673986278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3190908331673986287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fd41cd392a2bc54bafcba2ce86c928d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  verticalInputRef:
+    useConstant: 0
+    constantValue: 0
+    Variable: {fileID: 11400000, guid: e9ab9fe4c215a0441a0fab95f8fa93fe, type: 2}
+  fuelRef:
+    useConstant: 0
+    constantValue: 0
+    Variable: {fileID: 11400000, guid: b64aadf9cb0eb57419e21567199dd2bc, type: 2}
+--- !u!114 &3190908331673986299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3190908331673986287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cafdf242b94340c2a372bb424078b725, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectWeapon:
+    m_Name: Select Weapon
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 12757218-3c12-4937-b38e-92e05779c4b7
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: Keyboard
+      m_Id: 498e7c4d-6cfd-40fe-8cc0-95420ab513ba
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Select Weapon
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: f75d541f-82e2-4268-ac94-61e9c5d32d7f
+      m_Path: <Keyboard>/q
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Select Weapon
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: a25667f9-7ef5-4cb6-9a79-6f21570021e8
+      m_Path: <Keyboard>/e
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Select Weapon
+      m_Flags: 8
+    - m_Name: Gamepad
+      m_Id: 8d367a8a-b18b-4e14-ad92-d47b7a51578a
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Select Weapon
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: b9bb2eb6-5b7e-4816-9f17-ad737644843a
+      m_Path: <Gamepad>/leftShoulder
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Select Weapon
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: d4a8beec-e3c6-48db-a966-cc964a2c34f8
+      m_Path: <Gamepad>/rightShoulder
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Select Weapon
+      m_Flags: 8
+    m_Flags: 0
+  shoot:
+    m_Name: Trigger
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 508c2424-d007-465e-b533-7f0327f6adbb
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 8a56898b-82bc-46f7-a854-8c6cf75e10a6
+      m_Path: <Keyboard>/space
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Trigger
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 0969f154-7bf3-4e0f-a6da-1edf50db7fac
+      m_Path: <Gamepad>/buttonSouth
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Trigger
+      m_Flags: 0
+    m_Flags: 0
+--- !u!114 &3190908331673986298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3190908331673986287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fb3edfab4f743faacf4700dc35dcad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth:
+    useConstant: 0
+    constantValue: 0
+    Variable: {fileID: 11400000, guid: 34ad5789b0d11de47a54e705d8b8b506, type: 2}
+  health:
+    useConstant: 0
+    constantValue: 0
+    Variable: {fileID: 11400000, guid: a266e67383076f940888621ce44ff83b, type: 2}
+--- !u!114 &1108188599628950117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3190908331673986287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6f15f70db0f46b19ccbb76fece55e4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7976945511815386270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3190908331673986287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d159f1c6e8964f0aa4179639b76659a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onLoot:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &7894146003019771742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3190908331673986287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf04865459bfffa418112f652c784660, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  right: {fileID: 6644296296395403585}
+  left: {fileID: 565350646054274544}
+  distance: 50
 --- !u!199 &3190908331673986277
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -5309,21 +5328,6 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &7894146003019771742
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3190908331673986287}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf04865459bfffa418112f652c784660, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  right: {fileID: 6644296296395403585}
-  left: {fileID: 565350646054274544}
-  distance: 50
 --- !u!1 &7483319471007936170
 GameObject:
   m_ObjectHideFlags: 0

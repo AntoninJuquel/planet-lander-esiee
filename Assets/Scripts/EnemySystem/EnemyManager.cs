@@ -12,7 +12,8 @@ namespace EnemySystem
         [SerializeField] private Reference<int> killsRef, waveNumberRef, levelRef;
         [SerializeField] private Reference<bool> wavesFinishedRef;
 
-        public event EventHandler<int> OnStartEncounter;
+        public event EventHandler<int> OnStartWave;
+        public event EventHandler OnStopWave;
 
         private Dictionary<Transform, GameObject> _enemies = new();
         private Transform _player;
@@ -23,8 +24,9 @@ namespace EnemySystem
             _mainCamera = Camera.main;
         }
 
-        private void SpawnEnemy(GameObject enemy, Vector3 position)
+        private void SpawnEnemy(GameObject enemy)
         {
+            var position = (Vector2) _mainCamera.ViewportToWorldPoint(new Vector3(UnityEngine.Random.Range(0f, 1f), UnityEngine.Random.Range(1.5f, 2f)));
             var newEnemy = Instantiate(enemy, position, Quaternion.identity);
             _enemies.Add(newEnemy.transform, newEnemy);
         }
@@ -47,6 +49,17 @@ namespace EnemySystem
             }
 
             _enemies = new Dictionary<Transform, GameObject>();
+            OnStopWave?.Invoke(this, null);
+        }
+
+        public void StartEnemyManager()
+        {
+            OnStartWave?.Invoke(this, levelRef.Value);
+        }
+
+        public void StopEnemyManager()
+        {
+            KillAll();
         }
 
         public void OnNewWave()
@@ -60,7 +73,7 @@ namespace EnemySystem
 
         public void OnWaveSpawn(GameObject toSpawn)
         {
-            SpawnEnemy(toSpawn, Vector3.zero);
+            SpawnEnemy(toSpawn);
         }
 
         public void OnWaveFinished()

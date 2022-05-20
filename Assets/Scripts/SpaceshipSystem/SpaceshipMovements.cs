@@ -8,7 +8,7 @@ namespace SpaceshipSystem
     {
         private Spaceship Data => SpaceshipManager.Data;
         [SerializeField] private InputAction horizontal, vertical;
-        [SerializeField] private Reference<float> horizontalInputRef, verticalInputRef, fuelRef;
+        [SerializeField] private Reference<float> horizontalInputRef, verticalInputRef, fuelRef, altitudeRef, speedRef;
 
         private Rigidbody2D _rb;
 
@@ -33,6 +33,8 @@ namespace SpaceshipSystem
         {
             horizontalInputRef.Value = horizontal.ReadValue<float>();
             verticalInputRef.Value = vertical.ReadValue<float>();
+            speedRef.Value = _rb.velocity.magnitude * 100f;
+            altitudeRef.Value = transform.position.y * 100f;
         }
 
         private void FixedUpdate()

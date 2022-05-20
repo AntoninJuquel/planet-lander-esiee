@@ -64,17 +64,17 @@ Material:
     - _gradient: 1
     - _gradientNoiseRoughness: 0
     - _gradientNoiseStrength: 0.14
-    - _gradientRoughness: 0.3
-    - _gradientStrength: 0.5
+    - _gradientRoughness: 0.1
+    - _gradientStrength: 0.2
     - _gradient_1: 1
     - _gradient_2: 1
     - _simpleNoise: 1
-    - _simpleNoiseRoughness: 3
-    - _simpleNoiseStrength: 0.5
+    - _simpleNoiseRoughness: 5
+    - _simpleNoiseStrength: 0.25
     - _voronoi: 1
     - _voronoiDisplacement: 360
-    - _voronoiRoughness: 0
-    - _voronoiStrength: 0
+    - _voronoiRoughness: 0.04
+    - _voronoiStrength: 0.8
     m_Colors:
     - Color_fc033ea1327f43a3a21504c01cb44c67: {r: 0.8938236, g: 0, b: 1, a: 1}
     - Color_fc033ea1327f43a3a21504c01cb44c67_1: {r: 1, g: 1, b: 1, a: 1}
@@ -85,15 +85,15 @@ Material:
     - Vector2_3bbaf0f0fd8948ad92ef482191871a28: {r: 0, g: 0, b: 0, a: 0}
     - Vector2_4: {r: 1, g: 1, b: 0, a: 0}
     - Vector2_5: {r: 1, g: 1, b: 0, a: 0}
-    - _gradientColor: {r: 0, g: 0, b: 0, a: 1}
+    - _gradientColor: {r: 0.53333336, g: 0.24313726, b: 0, a: 1}
     - _gradientNoiseTiling: {r: 1, g: 1, b: 0, a: 0}
-    - _gradientOffset: {r: 0, g: 0, b: 0, a: 0}
+    - _gradientOffset: {r: 433.0396, g: -955.9469, b: 90, a: 0}
     - _gradientTiling: {r: 50, g: 50, b: 0, a: 0}
     - _posterizeStrength: {r: 50, g: 50, b: 50, a: 4}
-    - _simpleNoiseColor: {r: 0, g: 0, b: 0, a: 1}
-    - _simpleNoiseOffset: {r: 0, g: 0, b: 0, a: 0}
+    - _simpleNoiseColor: {r: 0.53333336, g: 0.24313726, b: 0, a: 1}
+    - _simpleNoiseOffset: {r: 433.0396, g: -955.9469, b: 90, a: 0}
     - _simpleNoiseTilling: {r: 50, g: 50, b: 0, a: 0}
-    - _voronoiColor: {r: 0, g: 0, b: 0, a: 1}
-    - _voronoiOffset: {r: 0, g: 0, b: 0, a: 0}
+    - _voronoiColor: {r: 0.53333336, g: 0.24313726, b: 0, a: 1}
+    - _voronoiOffset: {r: 433.0396, g: -955.9469, b: 90, a: 0}
     - _voronoiTiling: {r: 50, g: 50, b: 0, a: 0}
   m_BuildTextureStacks: []

@@ -85,15 +85,15 @@ Material:
     - Vector2_3bbaf0f0fd8948ad92ef482191871a28: {r: 0, g: 0, b: 0, a: 0}
     - Vector2_4: {r: 1, g: 1, b: 0, a: 0}
     - Vector2_5: {r: 1, g: 1, b: 0, a: 0}
-    - _gradientColor: {r: 0.53333336, g: 0.24313726, b: 0, a: 1}
+    - _gradientColor: {r: 0, g: 0, b: 0, a: 1}
     - _gradientNoiseTiling: {r: 1, g: 1, b: 0, a: 0}
-    - _gradientOffset: {r: -329.83243, g: -214.8508, b: 90, a: 0}
+    - _gradientOffset: {r: 0, g: 0, b: 90, a: 0}
     - _gradientTiling: {r: 50, g: 50, b: 0, a: 0}
     - _posterizeStrength: {r: 50, g: 50, b: 50, a: 4}
-    - _simpleNoiseColor: {r: 0.53333336, g: 0.24313726, b: 0, a: 1}
-    - _simpleNoiseOffset: {r: -329.83243, g: -214.8508, b: 90, a: 0}
+    - _simpleNoiseColor: {r: 0, g: 0, b: 0, a: 1}
+    - _simpleNoiseOffset: {r: 0, g: 0, b: 90, a: 0}
     - _simpleNoiseTilling: {r: 50, g: 50, b: 0, a: 0}
-    - _voronoiColor: {r: 0.53333336, g: 0.24313726, b: 0, a: 1}
-    - _voronoiOffset: {r: -329.83243, g: -214.8508, b: 90, a: 0}
+    - _voronoiColor: {r: 0, g: 0, b: 0, a: 1}
+    - _voronoiOffset: {r: 0, g: 0, b: 90, a: 0}
     - _voronoiTiling: {r: 50, g: 50, b: 0, a: 0}
   m_BuildTextureStacks: []

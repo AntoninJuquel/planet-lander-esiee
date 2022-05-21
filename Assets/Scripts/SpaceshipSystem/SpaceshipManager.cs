@@ -15,7 +15,7 @@ namespace SpaceshipSystem
         [SerializeField] private float maxFuel;
 
         [SerializeField] private UnityEvent<GameObject> onSpaceshipSpawn;
-        [SerializeField] private UnityEvent onLivesEmpty;
+        [SerializeField] private UnityEvent onLivesEmpty, onSpaceshipDestroy;
         private GameObject _spaceship;
         public static Spaceship Data;
 
@@ -54,6 +54,7 @@ namespace SpaceshipSystem
 
         private void DestroySpaceship()
         {
+            onSpaceshipDestroy?.Invoke();
             Unsubscribe();
             Destroy(_spaceship);
         }

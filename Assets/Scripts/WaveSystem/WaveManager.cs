@@ -99,6 +99,7 @@ namespace WaveSystem
             }
 
             StopCoroutine(_encounter);
+            _encounter = null;
         }
     }
 }

@@ -26,6 +26,11 @@ namespace Game
         private bool Playing => _state == State.Playing;
         private bool Paused => _state == State.Paused;
 
+        private void Start()
+        {
+            onMainMenu?.Invoke();
+        }
+
         private void OnEnable()
         {
             pause.Enable();
@@ -109,7 +114,7 @@ namespace Game
         {
             levelRef.Value = index;
             _state = State.Playing;
-            onStartGame?.Invoke(index);
+            onStartGame?.Invoke(index + 1);
             Time.timeScale = 1;
         }
 

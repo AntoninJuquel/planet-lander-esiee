@@ -18,6 +18,8 @@ namespace SpaceshipSystem
 
         private void OnCollisionEnter2D(Collision2D col)
         {
+            if (!col.gameObject.CompareTag("World")) return;
+
             var angle = Vector2.Angle(transform.up, col.contacts[0].normal);
             var collisionSpeed = col.relativeVelocity.magnitude;
 

@@ -12,7 +12,7 @@ namespace SpaceshipSystem
         [SerializeField] private Reference<string> previousWeaponRef, currentWeaponRef, nextWeaponRef;
         [SerializeField] private Reference<int> shotsRef, hitRef;
         [SerializeField] private Reference<float> accuracyRef;
-        public bool PullTrigger { get; private set; }
+        public bool PullTrigger { get; set; }
         public event EventHandler<int> OnSwitchWeapon;
 
         private void OnEnable()

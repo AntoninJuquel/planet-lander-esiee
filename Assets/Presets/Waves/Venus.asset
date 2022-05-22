@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fc5ff155badfcf4b8a6aa464fed5452, type: 3}
+  m_Name: Venus
+  m_EditorClassIdentifier: 
+  waves:
+  - enemyNumber: 10
+    timeDelay: 3
+    spawnRate: 2
+    enemies:
+    - {fileID: 8051058571792330474, guid: 3c25840aaa9f50344bbb918443ae2efa, type: 3}
+    - {fileID: 8051058571792330474, guid: 3c6e0bc066586d6428d7508376892433, type: 3}
+    waitTime: 0
+    waitKill: 1
+  - enemyNumber: 12
+    timeDelay: 3
+    spawnRate: 3
+    enemies:
+    - {fileID: 8051058571792330474, guid: 1567d37ae19273e4d9af95eec0c8b0b4, type: 3}
+    - {fileID: 8051058571792330474, guid: 3c25840aaa9f50344bbb918443ae2efa, type: 3}
+    - {fileID: 8051058571792330474, guid: 3c6e0bc066586d6428d7508376892433, type: 3}
+    waitTime: 0
+    waitKill: 1
+  - enemyNumber: 5
+    timeDelay: 3
+    spawnRate: 5
+    enemies:
+    - {fileID: 8051058571792330474, guid: 19e5a34bd64196042bf1cfa78caf516e, type: 3}
+    waitTime: 0
+    waitKill: 1
+  - enemyNumber: 3
+    timeDelay: 3
+    spawnRate: 0.3
+    enemies:
+    - {fileID: 8051058571792330474, guid: 19e5a34bd64196042bf1cfa78caf516e, type: 3}
+    waitTime: 0
+    waitKill: 0
+  - enemyNumber: 12
+    timeDelay: 0
+    spawnRate: 3
+    enemies:
+    - {fileID: 8051058571792330474, guid: 3c25840aaa9f50344bbb918443ae2efa, type: 3}
+    - {fileID: 8051058571792330474, guid: 3c6e0bc066586d6428d7508376892433, type: 3}
+    - {fileID: 8051058571792330474, guid: 1567d37ae19273e4d9af95eec0c8b0b4, type: 3}
+    waitTime: 0
+    waitKill: 1

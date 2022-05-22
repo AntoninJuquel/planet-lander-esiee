@@ -17,8 +17,9 @@ namespace EnemySystem
 
         public event EventHandler<int> OnStartWave;
         public event EventHandler OnStopWave;
+        public event EventHandler OnKill;
 
-        private Dictionary<Transform, GameObject> _enemies = new();
+        private Dictionary<Transform, Enemy> _enemies = new();
         private Transform _player;
         private Camera _mainCamera;
 
@@ -30,8 +31,9 @@ namespace EnemySystem
         private void SpawnEnemy(GameObject enemy)
         {
             var position = (Vector2) _mainCamera.ViewportToWorldPoint(new Vector3(UnityEngine.Random.Range(0f, 1f), UnityEngine.Random.Range(1.5f, 2f)));
-            var newEnemy = Instantiate(enemy, position, Quaternion.identity);
+            var newEnemy = Instantiate(enemy, position, Quaternion.identity).GetComponent<Enemy>();
             newEnemy.GetComponent<EnemyHealth>().OnDie += OnEnemyDie;
+            newEnemy.SetTarget(_player);
             _enemies.Add(newEnemy.transform, newEnemy);
         }
 
@@ -47,6 +49,7 @@ namespace EnemySystem
         private void DestroyEnemy(Transform enemy)
         {
             enemy.GetComponent<EnemyHealth>().OnDie -= OnEnemyDie;
+            OnKill?.Invoke(this, null);
             Destroy(_enemies[enemy].gameObject);
             _enemies.Remove(enemy);
             killsRef.Value++;
@@ -63,13 +66,15 @@ namespace EnemySystem
 
             killsRef.Value = 0;
 
-            _enemies = new Dictionary<Transform, GameObject>();
+            _enemies = new Dictionary<Transform, Enemy>();
             OnStopWave?.Invoke(this, null);
         }
 
         public void StartEnemyManager()
         {
             OnStartWave?.Invoke(this, levelRef.Value);
+            wavesFinishedRef.Value = false;
+            waveNumberRef.Value = 0;
         }
 
         public void StopEnemyManager()
@@ -77,7 +82,7 @@ namespace EnemySystem
             KillAll();
         }
 
-        public void OnNewWave()
+        public void OnNewWave(int delay)
         {
             waveNumberRef.Value++;
         }
@@ -94,6 +99,15 @@ namespace EnemySystem
         public void OnWaveFinished()
         {
             wavesFinishedRef.Value = true;
+        }
+
+        public void OnPlayerSpawn(GameObject player)
+        {
+            _player = player.transform;
+            foreach (var enemy in _enemies)
+            {
+                enemy.Value.SetTarget(_player);
+            }
         }
     }
 }

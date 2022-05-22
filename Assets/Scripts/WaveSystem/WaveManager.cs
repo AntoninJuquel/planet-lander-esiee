@@ -11,7 +11,8 @@ namespace WaveSystem
     public class WaveManager : MonoBehaviour
     {
         [SerializeField] private Wave[] waves;
-        [SerializeField] private UnityEvent onNewWave, onWaveCleared, onWaveFinished;
+        [SerializeField] private UnityEvent<int> onNewWave;
+        [SerializeField] private UnityEvent onWaveCleared, onWaveFinished;
         [SerializeField] private UnityEvent<GameObject> onWaveSpawn;
         private int _killToConfirmWave, _currentKillToConfirmWave;
         private IEnumerable<IHandleWave> _waveHandlers;
@@ -33,6 +34,7 @@ namespace WaveSystem
 
                 waveHandler.OnStartWave += StartWave;
                 waveHandler.OnStopWave += StopWave;
+                waveHandler.OnKill += OnKill;
             }
         }
 
@@ -47,6 +49,7 @@ namespace WaveSystem
 
                 waveHandler.OnStartWave -= StartWave;
                 waveHandler.OnStopWave -= StopWave;
+                waveHandler.OnKill -= OnKill;
             }
         }
 
@@ -58,7 +61,7 @@ namespace WaveSystem
             {
                 var wave = wavePreset.waves[waveIndex];
                 _killToConfirmWave += wave.enemyNumber;
-                onNewWave?.Invoke();
+                onNewWave?.Invoke(wave.timeDelay);
                 yield return new WaitForSeconds(wave.timeDelay);
 
                 for (var i = 0; i < wave.enemyNumber; i++)
@@ -67,7 +70,7 @@ namespace WaveSystem
                     onWaveSpawn?.Invoke(wave.enemies[Random.Range(0, wave.enemies.Length)]);
                 }
 
-                if (wave.waitKill || waveIndex == wavePreset.waves.Length)
+                if (wave.waitKill || waveIndex == wavePreset.waves.Length - 1)
                 {
                     yield return new WaitUntil(() => _currentKillToConfirmWave >= _killToConfirmWave);
                     _currentKillToConfirmWave = 0;
@@ -100,6 +103,11 @@ namespace WaveSystem
 
             StopCoroutine(_encounter);
             _encounter = null;
+        }
+
+        private void OnKill(object sender, EventArgs args)
+        {
+            _currentKillToConfirmWave++;
         }
     }
 }

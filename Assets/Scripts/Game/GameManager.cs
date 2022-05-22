@@ -17,12 +17,13 @@ namespace Game
     public class GameManager : MonoBehaviour
     {
         [SerializeField] private Reference<int> levelRef, livesRef;
+        [SerializeField] private Reference<float> timeRef;
         [SerializeField] private Reference<bool> landedRef, waveFinished;
         [SerializeField] private UnityEvent<int> onStartGame;
         [SerializeField] private UnityEvent onPauseGame, onResumeGame, onMainMenu, onGameOver, onWin, onLose;
         [SerializeField] private InputAction pause;
         private State _state;
-
+        private float _startTime;
         private bool Playing => _state == State.Playing;
         private bool Paused => _state == State.Paused;
 
@@ -65,17 +66,18 @@ namespace Game
 
         private void GameOver()
         {
+            timeRef.Value = Time.time - _startTime;
             if (livesRef.Value <= 0)
             {
+                _state = State.GameOver;
                 onGameOver?.Invoke();
                 onLose?.Invoke();
-                _state = State.GameOver;
             }
             else if (landedRef.Value && waveFinished.Value)
             {
+                _state = State.GameOver;
                 onGameOver?.Invoke();
                 onWin?.Invoke();
-                _state = State.GameOver;
             }
         }
 
@@ -116,6 +118,7 @@ namespace Game
             _state = State.Playing;
             onStartGame?.Invoke(index + 1);
             Time.timeScale = 1;
+            _startTime = Time.time;
         }
 
         public void StartGame()

@@ -9,11 +9,11 @@ namespace SpaceshipSystem
     {
         [SerializeField] private GameObject spaceshipPrefab;
 
-        [SerializeField] private Reference<int> livesRef, maxLivesRef;
-        [SerializeField] private Reference<float> fuelRef, maxFuelRef;
+        [SerializeField] private Reference<int> livesRef, maxLivesRef, shotsRef, hitsRef, deathsRef;
+        [SerializeField] private Reference<float> fuelRef, maxFuelRef, fuelBurntRef;
+        [SerializeField] private Reference<bool> landRef;
         [SerializeField] private Spaceship[] data;
         [SerializeField] private float maxFuel;
-
         [SerializeField] private UnityEvent<GameObject> onSpaceshipSpawn;
         [SerializeField] private UnityEvent onLivesEmpty, onSpaceshipDestroy;
         private GameObject _spaceship;
@@ -52,9 +52,10 @@ namespace SpaceshipSystem
             CheckRespawn();
         }
 
-        private void DestroySpaceship()
+        private void DestroySpaceship(bool withInvoke = true)
         {
-            onSpaceshipDestroy?.Invoke();
+            if (withInvoke)
+                onSpaceshipDestroy?.Invoke();
             Unsubscribe();
             Destroy(_spaceship);
         }
@@ -62,6 +63,7 @@ namespace SpaceshipSystem
         private void CheckRespawn()
         {
             livesRef.Value--;
+            deathsRef.Value++;
             if (livesRef.Value <= 0)
             {
                 onLivesEmpty?.Invoke();
@@ -71,17 +73,28 @@ namespace SpaceshipSystem
             SpawnSpaceship();
         }
 
-        public void StartSpaceshipManager()
+        private void ResetRefs()
         {
             livesRef.Value = maxLivesRef.Value = data.Length;
             fuelRef.Value = maxFuelRef.Value = maxFuel;
+
+            hitsRef.Value = 0;
+            fuelBurntRef.Value = 0;
+            shotsRef.Value = 0;
+            deathsRef.Value = 0;
+            landRef.Value = false;
+        }
+
+        public void StartSpaceshipManager()
+        {
+            ResetRefs();
             SpawnSpaceship();
         }
 
         public void StopSpaceshipManager()
         {
             if (_spaceship)
-                DestroySpaceship();
+                DestroySpaceship(false);
         }
     }
 }

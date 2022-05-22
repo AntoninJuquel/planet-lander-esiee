@@ -5,13 +5,13 @@ using WeaponSystem;
 
 namespace HealthSystem
 {
-    public abstract class Health : MonoBehaviour, ITakeHit
+    public abstract class Health : MonoBehaviour, ITakeAmmunitionHit
     {
         [SerializeField] protected Reference<int> maxHealth, health;
         [SerializeField] private bool canHeal;
         public event EventHandler OnDie, OnTakeHit;
 
-        protected virtual void Die()
+        public virtual void Die()
         {
             OnDie?.Invoke(this, null);
         }

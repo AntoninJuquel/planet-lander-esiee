@@ -18,7 +18,6 @@ MonoBehaviour:
   torqueSpeed: 200
   maxLandAngle: 15
   maxLandVelocity: 5
-  maxFuel: 100
   fuelBurnRate: 2
   minParticleRate: 0.5
   maxParticleRate: 2

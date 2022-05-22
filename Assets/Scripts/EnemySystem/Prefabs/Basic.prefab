@@ -48,7 +48,19 @@ MonoBehaviour:
   weaponInventory: {fileID: 8079271723794269470}
   onShoot:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2663744299200210918}
+        m_TargetAssemblyTypeName: AudioSystem.SoundEffectPlayer, Assembly-CSharp
+        m_MethodName: PlayRandom
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6664796302403507576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87,6 +99,7 @@ GameObject:
   - component: {fileID: 8079271723794269470}
   - component: {fileID: 1554251454358246200}
   - component: {fileID: -5421327587408918334}
+  - component: {fileID: 2663744299200210918}
   m_Layer: 0
   m_Name: Basic
   m_TagString: Untagged
@@ -281,3 +294,21 @@ DistanceJoint2D:
   m_AutoConfigureDistance: 0
   m_Distance: 1
   m_MaxDistanceOnly: 1
+--- !u!114 &2663744299200210918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8051058571792330474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c0e86e763e283c4d899029039687f27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: d1669f9e03a5b6642bcbce843acd96ba, type: 3}
+  - {fileID: 8300000, guid: 56fb8230d104d16438fd77bfc94ca4e3, type: 3}
+  - {fileID: 8300000, guid: fce61ba861466be45837c772ba21741a, type: 3}
+  - {fileID: 8300000, guid: d1559a44cabceaf489dd8a23f723d383, type: 3}
+  - {fileID: 8300000, guid: 3058257a15b67494b8bbbf98b894821b, type: 3}

@@ -67,7 +67,7 @@ namespace Game
         private void GameOver()
         {
             timeRef.Value = Time.time - _startTime;
-            if (livesRef.Value <= 0)
+            if (livesRef.Value <= 0 && timeRef.Value > 3f)
             {
                 _state = State.GameOver;
                 onGameOver?.Invoke();
@@ -114,11 +114,11 @@ namespace Game
 
         public void StartGame(int index)
         {
+            _startTime = Time.time;
             levelRef.Value = index;
             _state = State.Playing;
-            onStartGame?.Invoke(index + 1);
             Time.timeScale = 1;
-            _startTime = Time.time;
+            onStartGame?.Invoke(index + 1);
         }
 
         public void StartGame()

@@ -5432,8 +5432,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapons:
-  - {fileID: 11400000, guid: a68ae9a1e22d69b4eb41feecbf95b404, type: 2}
-  - {fileID: 11400000, guid: 7ffeef6097c3e7147bc9c7e30cd946ef, type: 2}
+  - {fileID: 11400000, guid: 07cfeeb9d21c22e4187fc659c8a4ee5e, type: 2}
   onWeaponChanged:
     m_PersistentCalls:
       m_Calls:

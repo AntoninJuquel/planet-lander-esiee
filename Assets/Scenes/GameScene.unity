@@ -11759,6 +11759,8 @@ MonoBehaviour:
   clips:
   - {fileID: 8300000, guid: 161d273873173e5408ec2ea9ee1c9820, type: 3}
   - {fileID: 8300000, guid: d3554ab3471fa4f468b19acf34cba078, type: 3}
+  - {fileID: 8300000, guid: da3d1b0dced84764db536372ccd3ac90, type: 3}
+  - {fileID: 8300000, guid: 1d297dccc904c8c48afe2e5fd454cd9f, type: 3}
   fading:
     serializedVersion: 2
     m_Curve:
